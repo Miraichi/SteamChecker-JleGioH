@@ -1,0 +1,747 @@
+<Window
+	x:Class="SteamCheCkeR.LogViewer" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="SteamCheCkeR by JLeGioH"
+	Height="857"
+	Width="739"
+	MaxHeight="857"
+	MaxWidth="739"
+	MinHeight="857"
+	MinWidth="739"
+	Icon="/mainicon.ico"
+	WindowStartupLocation="CenterScreen"
+	WindowStyle="None"
+	ScrollViewer.VerticalScrollBarVisibility="Auto"
+	Style="{StaticResource VS2012WindowStyle}" xmlns:steamchecker="clr-namespace:SteamCheCkeR"
+	Loaded="method_3">
+	<Canvas
+		Background="#FF211F1F"
+		RenderTransformOrigin="0.267,0.268"
+		Margin="0,-6,0,0"
+		Height="815">
+		<Label
+			Content="Всего акков:"
+			Foreground="#FFFFFFFF"
+			FontSize="14"
+			Canvas.Top="74"
+			Canvas.Left="1" />
+		<Label
+			Content="Сортировать:"
+			Foreground="#FFFFFFFF"
+			FontSize="14"
+			Canvas.Top="99" />
+		<Label
+			Content="Поиск по названию:"
+			Foreground="#FFFFFFFF"
+			Canvas.Left="419"
+			Width="172"
+			Height="32"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			Canvas.Top="158" />
+		<ComboBox
+			Name="comboBoxSort"
+			Style="{StaticResource MetroComboBox}"
+			Canvas.Left="101"
+			Canvas.Top="101"
+			Width="126"
+			SelectedIndex="0"
+			RenderTransformOrigin="0.133,0.364"
+			BorderBrush="#FFECEAEA"
+			Height="27"
+			SelectionChanged="comboBoxSort_SelectionChanged">
+			<ComboBoxItem
+				Content="Без фильтра" />
+			<ComboBoxItem
+				Content="Кол. Игр" />
+			<ComboBoxItem
+				Content="Кол. Инвентаря" />
+			<ComboBoxItem
+				Content="Длина SteamID" />
+		</ComboBox>
+		<Label
+			Name="labelAllAccsCountLog"
+			Content="0"
+			Foreground="#FFFFFFFF"
+			FontSize="14"
+			Canvas.Left="102"
+			Canvas.Top="74"
+			Width="125" />
+		<Label
+			Name="NickProfileLink"
+			Content="http://steamcommunity.com/id||profiles/XXXXXXXXXXXXXXXXXXXX"
+			Foreground="#FF51FF00"
+			FontSize="16"
+			Canvas.Left="236"
+			Width="489"
+			Height="32"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			Canvas.Top="-4"
+			MouseDoubleClick="NickProfileLink_MouseDoubleClick" />
+		<Label
+			Name="SteamID"
+			Content="SteamID: STEAM_x:c:xxxxxxxx [x]"
+			Foreground="#FF51FF00"
+			FontSize="16"
+			Canvas.Left="239"
+			Width="231"
+			Height="32"
+			FontStyle="Italic"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			Canvas.Top="28" />
+		<Label
+			Name="LabelGameCount"
+			Content="Список игр: -&gt; 0"
+			Foreground="#FFFFFFFF"
+			FontSize="16"
+			Canvas.Left="239"
+			Width="172"
+			Height="32"
+			FontStyle="Italic"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			Canvas.Top="60" />
+		<Label
+			Name="LabelBanStatus"
+			Content="BAN status: -&gt; OK"
+			Foreground="#FFFFFFFF"
+			FontSize="16"
+			Canvas.Left="479"
+			Width="172"
+			Height="32"
+			FontStyle="Italic"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			Canvas.Top="60" />
+		<Label
+			Name="LabelTradeStatus"
+			Content="TRADE status: -&gt; OK"
+			Foreground="#FFFFFFFF"
+			FontSize="16"
+			Canvas.Left="479"
+			Width="172"
+			Height="32"
+			FontStyle="Italic"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			Canvas.Top="92" />
+		<Label
+			Name="LabelHideStatus"
+			Content="Profile status: -&gt; Доступен"
+			Foreground="#FFFFFFFF"
+			FontSize="16"
+			Canvas.Left="478"
+			Width="247"
+			Height="32"
+			FontStyle="Italic"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			Canvas.Top="28" />
+		<Label
+			Name="LabelInventaryCount"
+			Content="Инвентарь: -&gt; 0"
+			Foreground="#FFFFFFFF"
+			FontSize="16"
+			Canvas.Left="239"
+			Width="172"
+			Height="32"
+			FontStyle="Italic"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			Canvas.Top="92" />
+		<TextBox
+			Name="TextBoxItemSearch"
+			Style="{StaticResource MetroTextBoxItem}"
+			HorizontalContentAlignment="Center"
+			Width="292"
+			Canvas.Left="425"
+			Canvas.Top="181"
+			Margin="0"
+			TextChanged="TextBoxItemSearch_TextChanged" />
+		<Button
+			Name="ButonAddAccsLog"
+			IsEnabled="True"
+			Content=""
+			FontSize="14"
+			Style="{StaticResource MyButtonStyle}"
+			Height="37"
+			Canvas.Left="2"
+			Canvas.Top="2"
+			Width="225"
+			Click="ButonAddAccsLog_Click">
+			<ContentControl.ContentTemplate>
+				<DataTemplate>
+					<StackPanel
+						Orientation="Horizontal"
+						Width="199">
+						<Image
+							Source="/Images/open.png"
+							Margin="0, 0,0,0" />
+						<TextBlock
+							Width="Auto"
+							Text="Добавить Steam Log..."
+							VerticalAlignment="Center" />
+					</StackPanel>
+				</DataTemplate>
+			</ContentControl.ContentTemplate>
+		</Button>
+		<Button
+			Name="ButonAddDotaLog"
+			IsEnabled="True"
+			Content=""
+			FontSize="14"
+			Style="{StaticResource MyButtonStyle}"
+			Height="37"
+			Canvas.Left="3"
+			Canvas.Top="42"
+			Width="225"
+			Click="ButonAddDotaLog_Click">
+			<ContentControl.ContentTemplate>
+				<DataTemplate>
+					<StackPanel
+						Orientation="Horizontal"
+						Width="199">
+						<Image
+							Source="/Images/open.png"
+							Margin="0, 0,0,0" />
+						<TextBlock
+							Width="Auto"
+							Text="Добавить Dota Log..."
+							VerticalAlignment="Center" />
+					</StackPanel>
+				</DataTemplate>
+			</ContentControl.ContentTemplate>
+		</Button>
+		<Grid
+			Name="groupButomBox"
+			Height="163"
+			Canvas.Left="3"
+			Canvas.Top="650"
+			Width="225">
+			<Button
+				Name="SaveAllAccs"
+				IsEnabled="True"
+				Content=""
+				FontSize="14"
+				Style="{StaticResource MyButtonStyle}"
+				Margin="0,42,0,84"
+				VerticalAlignment="Bottom"
+				Click="SaveAllAccs_Click">
+				<ContentControl.ContentTemplate>
+					<DataTemplate>
+						<StackPanel
+							Orientation="Horizontal"
+							Width="213">
+							<Image
+								Source="/Images/Save as.png"
+								Margin="0, 0,0,0" />
+							<TextBlock
+								Width="142"
+								Text="  Сохранить все..."
+								VerticalAlignment="Center" />
+						</StackPanel>
+					</DataTemplate>
+				</ContentControl.ContentTemplate>
+			</Button>
+			<Button
+				Name="SaveSellerLog"
+				IsEnabled="True"
+				Content=""
+				FontSize="14"
+				Style="{StaticResource MyButtonStyle}"
+				Margin="0,0,0,126"
+				VerticalAlignment="Bottom"
+				Click="SaveSellerLog_Click">
+				<ContentControl.ContentTemplate>
+					<DataTemplate>
+						<StackPanel
+							Orientation="Horizontal"
+							Width="214">
+							<Image
+								Source="/Images/Save as.png"
+								Margin="0, 0,0,0" />
+							<TextBlock
+								Width="162"
+								Text="  Сохранить все(seller)..."
+								VerticalAlignment="Center" />
+						</StackPanel>
+					</DataTemplate>
+				</ContentControl.ContentTemplate>
+			</Button>
+			<Button
+				Name="SaveOneAccs"
+				IsEnabled="True"
+				Content=""
+				FontSize="14"
+				Style="{StaticResource MyButtonStyle}"
+				Margin="0,84,0,42"
+				VerticalAlignment="Bottom"
+				Click="SaveOneAccs_Click">
+				<ContentControl.ContentTemplate>
+					<DataTemplate>
+						<StackPanel
+							Orientation="Horizontal"
+							Width="215">
+							<Image
+								Source="/Images/Save as.png"
+								Margin="0, 0,0,0" />
+							<TextBlock
+								Width="151"
+								Text="   Сохранить один..."
+								Margin="-8, 0,0,0"
+								VerticalAlignment="Center" />
+						</StackPanel>
+					</DataTemplate>
+				</ContentControl.ContentTemplate>
+			</Button>
+			<Button
+				Name="CopyToClipboard"
+				IsEnabled="True"
+				Content=""
+				FontSize="14"
+				Style="{StaticResource MyButtonStyle}"
+				Height="37"
+				VerticalAlignment="Bottom"
+				Click="CopyToClipboard_Click">
+				<ContentControl.ContentTemplate>
+					<DataTemplate>
+						<StackPanel
+							Orientation="Horizontal"
+							Width="225">
+							<Image
+								Source="/Images/Copy.png"
+								Margin="0, 0,0,0" />
+							<TextBlock
+								Width="168"
+								Text="Копировать в буфер"
+								VerticalAlignment="Center" />
+						</StackPanel>
+					</DataTemplate>
+				</ContentControl.ContentTemplate>
+			</Button>
+			<CheckBox
+				Name="CheckBoxSaveAllAccsDota"
+				IsEnabled="True"
+				Style="{StaticResource NormalStyleCheckBox}"
+				ToolTip="Сохранить также информацию о Dote"
+				Foreground="#32CD32"
+				FontWeight="Bold"
+				Margin="196,56,14,94"
+				VerticalAlignment="Bottom" />
+			<CheckBox
+				Name="CheckBoxSaveOneAccsDota"
+				IsEnabled="True"
+				Style="{StaticResource NormalStyleCheckBox}"
+				ToolTip="Сохранить также информацию о Dote"
+				Foreground="#32CD32"
+				FontWeight="Bold"
+				Margin="196,97,14,53"
+				VerticalAlignment="Bottom" />
+			<CheckBox
+				Name="CheckBoxCopyAccsDota"
+				IsEnabled="True"
+				Style="{StaticResource NormalStyleCheckBox}"
+				ToolTip="Копировать также информацию о Dote"
+				Foreground="#32CD32"
+				FontWeight="Bold"
+				Margin="196,138,14,12"
+				VerticalAlignment="Bottom" />
+		</Grid>
+		<ListBox
+			Name="ListBoxLog"
+			Style="{StaticResource MetroListBoxItem}"
+			Height="516"
+			Canvas.Left="4"
+			Canvas.Top="129"
+			Width="224"
+			Margin="0"
+			SelectionChanged="ListBoxLog_SelectionChanged" />
+		<Grid
+			Name="gridViborka"
+			Height="28"
+			Canvas.Left="238"
+			Canvas.Top="785"
+			Width="491">
+			<Button
+				Name="ButtonViborka"
+				IsEnabled="True"
+				Content=""
+				FontSize="14"
+				Style="{StaticResource MyButtonStyle}"
+				Margin="0,0,188,0"
+				VerticalAlignment="Bottom"
+				HorizontalAlignment="Left"
+				Click="ButtonViborka_Click">
+				<ContentControl.ContentTemplate>
+					<DataTemplate>
+						<StackPanel
+							Orientation="Horizontal"
+							Width="299">
+							<Image
+								Source="/Images/Apply.png"
+								Margin="75, 0,0,0" />
+							<TextBlock
+								Width="168"
+								Text="Применить!"
+								Margin="15, 0,0,0"
+								VerticalAlignment="Center" />
+						</StackPanel>
+					</DataTemplate>
+				</ContentControl.ContentTemplate>
+			</Button>
+			<Button
+				Name="ButtonSbros"
+				IsEnabled="True"
+				Content=""
+				FontSize="14"
+				Style="{StaticResource MyButtonStyle}"
+				Margin="304,0,10,0"
+				Click="ButtonSbros_Click">
+				<ContentControl.ContentTemplate>
+					<DataTemplate>
+						<StackPanel
+							Orientation="Horizontal"
+							Width="125">
+							<Image
+								Source="/Images/Cancel.png"
+								Margin="15, 0,0,0" />
+							<TextBlock
+								Width="99"
+								Text="Сбросить!"
+								Margin="5, 0,0,0"
+								VerticalAlignment="Center" />
+						</StackPanel>
+					</DataTemplate>
+				</ContentControl.ContentTemplate>
+			</Button>
+		</Grid>
+		<CheckBox
+			Name="CheckBoxDota"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Dota"
+			ToolTip="Dota item Log Viewer"
+			Width="13"
+			Canvas.Left="425"
+			Canvas.Top="112"
+			Click="CheckBoxDota_Click">
+			<ContentControl.ContentTemplate>
+				<DataTemplate>
+					<StackPanel
+						Orientation="Horizontal">
+						<Image
+							Source="/Images/dota.png"
+							Height="32"
+							Width="32"
+							Margin="-47,-28,-2,-3" />
+					</StackPanel>
+				</DataTemplate>
+			</ContentControl.ContentTemplate>
+		</CheckBox>
+		<CheckBox
+			Name="LoadImages"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Загружать картинки предметов"
+			Foreground="#32CD32"
+			FontWeight="Bold"
+			Width="210"
+			Canvas.Left="425"
+			Canvas.Top="130" />
+		<CheckBox
+			Name="CheckBoxAllAccsFiltr"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Применить фильтры ко всем аккаунтам"
+			Foreground="#32CD32"
+			FontWeight="Bold"
+			Width="268"
+			Canvas.Left="425"
+			Canvas.Top="149"
+			Click="CheckBoxAllAccsFiltr_Click" />
+		<CheckBox
+			Name="checkBoxUnselect"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Unselect"
+			Width="69"
+			Foreground="#FFFF0000"
+			FontWeight="Bold"
+			Canvas.Left="656"
+			Canvas.Top="229"
+			Click="checkBoxUnselect_Click" />
+		<CheckBox
+			Name="RarityCommon"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Common"
+			Foreground="#32CD32"
+			FontWeight="Bold"
+			Width="80"
+			Canvas.Left="478"
+			Canvas.Top="208"
+			Click="QualityStandard_Click" />
+		<CheckBox
+			Name="RarityLegendary"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Legendary"
+			Foreground="#32CD32"
+			FontWeight="Bold"
+			Width="80"
+			Canvas.Left="478"
+			Canvas.Top="229"
+			Click="QualityStandard_Click" />
+		<CheckBox
+			Name="RarityMythical"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Mythical"
+			Foreground="#32CD32"
+			FontWeight="Bold"
+			Width="67"
+			Canvas.Left="562"
+			Canvas.Top="208"
+			Click="QualityStandard_Click" />
+		<CheckBox
+			Name="RarityRare"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Rare"
+			Width="62"
+			Foreground="#32CD32"
+			FontWeight="Bold"
+			Canvas.Left="656"
+			Canvas.Top="208"
+			Click="QualityStandard_Click" />
+		<CheckBox
+			Name="RarityUncommon"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Uncommon"
+			Foreground="#32CD32"
+			FontWeight="Bold"
+			Width="86"
+			Canvas.Left="562"
+			Canvas.Top="229"
+			Click="QualityStandard_Click" />
+		<CheckBox
+			Name="QualityAuspicious"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Auspicious"
+			Foreground="#32CD32"
+			FontWeight="Bold"
+			Width="85"
+			Canvas.Left="240"
+			Canvas.Top="208"
+			Click="QualityStandard_Click" />
+		<CheckBox
+			Name="QualityCursed"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Cursed"
+			Foreground="#8650AC"
+			FontWeight="Bold"
+			Width="85"
+			Canvas.Left="240"
+			Canvas.Top="229"
+			Click="QualityStandard_Click" />
+		<CheckBox
+			Name="QualityFrozen"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Frozen"
+			Foreground="#4682B4"
+			FontWeight="Bold"
+			Width="74"
+			Canvas.Left="322"
+			Canvas.Top="208"
+			Click="QualityStandard_Click" />
+		<CheckBox
+			Name="QualityGenuine"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Genuine"
+			Foreground="#4D7455"
+			FontWeight="Bold"
+			Width="74"
+			Canvas.Left="322"
+			Canvas.Top="229"
+			Click="QualityStandard_Click" />
+		<CheckBox
+			Name="QualityInscribed"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Inscribed"
+			Foreground="#CF6A32"
+			FontWeight="Bold"
+			Width="79"
+			Canvas.Left="396"
+			Canvas.Top="208"
+			Click="QualityStandard_Click" />
+		<CheckBox
+			Name="QualityStandard"
+			IsEnabled="True"
+			Style="{StaticResource NormalStyleCheckBox}"
+			Content="Standard"
+			Foreground="#CF6A32"
+			FontWeight="Bold"
+			Width="79"
+			Canvas.Left="396"
+			Canvas.Top="229"
+			Click="QualityStandard_Click" />
+		<DataGrid
+			Name="dataGridDota"
+			AutoGenerateColumns="False"
+			CanUserAddRows="True"
+			Canvas.Left="239"
+			Canvas.Top="250"
+			Height="319"
+			Width="478"
+			ItemsSource="{Binding DotaDataClas}"
+			SelectionChanged="dataGridDota_SelectionChanged">
+			<DataGrid.Columns>
+				<DataGridTextColumn
+					Header="Name"
+					IsReadOnly="True"
+					Width="294"
+					Binding="{Binding Path=name}" />
+				<DataGridTextColumn
+					Header="Quality"
+					IsReadOnly="True"
+					Width="90"
+					Binding="{Binding Path=qualityName}" />
+				<DataGridTextColumn
+					Header="Rarity"
+					IsReadOnly="True"
+					Width="90"
+					Binding="{Binding Path=rarityName}" />
+			</DataGrid.Columns>
+		</DataGrid>
+		<Image
+			Name="ImageItem"
+			Height="73"
+			Canvas.Left="238"
+			Canvas.Top="130"
+			Width="158"
+			Source="/Images/maxresdefault.jpg" />
+		<Grid
+			Name="gridDotaItem"
+			Height="219"
+			Canvas.Left="239"
+			Canvas.Top="562"
+			Width="479">
+			<Label
+				Content="Условия выборки по предметам:"
+				Foreground="#FFFFFFFF"
+				FontSize="16"
+				Width="281"
+				Height="32"
+				FontStyle="Italic"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Margin="0,0,198,187" />
+			<ListBox
+				Name="ListBoxAllItems"
+				Style="{StaticResource MetroListBoxItem}"
+				SelectionMode="Multiple"
+				Margin="0,30,0,0" />
+		</Grid>
+		<Canvas
+			Name="groupBoxInfo"
+			Background="#FF211F1F"
+			Height="651"
+			Left="239"
+			Top="129"
+			Width="481">
+			<Grid
+				Name="gridViborLll"
+				Height="219"
+				Canvas.Top="432"
+				Width="481"
+				VerticalAlignment="Bottom">
+				<ListBox
+					Name="ListBoxAllGames"
+					Style="{StaticResource MetroListBoxItem}"
+					SelectionMode="Multiple"
+					Margin="0,0,182,0"
+					Height="189"
+					VerticalAlignment="Bottom" />
+				<ListBox
+					Name="ListBoxAllInventary"
+					Style="{StaticResource MetroListBoxItem}"
+					SelectionMode="Multiple"
+					Margin="299,30,0,0"
+					RenderTransformOrigin="0.484,-0.381" />
+				<Label
+					Content="Условия выборки по критериям:"
+					Foreground="#FFFFFFFF"
+					FontSize="16"
+					Width="281"
+					Height="32"
+					FontStyle="Italic"
+					VerticalAlignment="Center"
+					HorizontalAlignment="Center"
+					Margin="0,0,200,187" />
+			</Grid>
+			<TextBox
+				Name="textBoxInfo"
+				Style="{StaticResource MetroTextBoxItem}"
+				Height="402"
+				TextWrapping="Wrap"
+				VerticalContentAlignment="Top"
+				Text=""
+				VerticalScrollBarVisibility="Auto"
+				Width="481"
+				Margin="0" />
+			<Label
+				Name="LabelextFiltr"
+				Content="Текстовый фильтр:"
+				Foreground="#FFFFFFFF"
+				FontSize="16"
+				Width="168"
+				Height="32"
+				FontStyle="Italic"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Canvas.Top="407" />
+			<TextBox
+				Name="textBoxFiltrText"
+				Style="{StaticResource MetroTextBoxItem}"
+				Height="25"
+				TextWrapping="NoWrap"
+				VerticalContentAlignment="Top"
+				Text=""
+				VerticalScrollBarVisibility="Auto"
+				Width="284"
+				Margin="0"
+				Canvas.Top="412"
+				Canvas.Left="162" />
+			<Label
+				Name="LabelSetTextFiltr"
+				IsEnabled="True"
+				ToolTip="Применить!"
+				Foreground="#FFFFFFFF"
+				Height="34"
+				FontWeight="Bold"
+				Canvas.Top="410"
+				Width="35"
+				Canvas.Left="446"
+				MouseDown="LabelSetTextFiltr_MouseDown">
+				<ContentControl.ContentTemplate>
+					<DataTemplate>
+						<StackPanel
+							Orientation="Horizontal"
+							Width="24">
+							<Image
+								Source="/Images/Apply.png"
+								Margin="0, 0,0,0" />
+						</StackPanel>
+					</DataTemplate>
+				</ContentControl.ContentTemplate>
+			</Label>
+		</Canvas>
+	</Canvas>
+</Window>

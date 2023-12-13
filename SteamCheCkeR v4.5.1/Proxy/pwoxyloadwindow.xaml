@@ -1,0 +1,27 @@
+<Window
+	x:Class="Whush.Demo.Proxy.ProxyLoadWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:gif="http://wpfanimatedgif.codeplex.com"
+	Title="Load pwoxy"
+	Height="100"
+	Width="123"
+	MaxHeight="100"
+	MaxWidth="123"
+	MinHeight="100"
+	MinWidth="123"
+	Icon="/mainicon.ico"
+	WindowStyle="None"
+	AllowsTransparency="True"
+	Background="#00FFFFFF"
+	Topmost="True"
+	WindowStartupLocation="CenterScreen" xmlns:proxy="clr-namespace:Whush.Demo.Proxy"
+	Loaded="WindowLoad">
+	<Canvas
+		Background="#00FFFFFF">
+		<Image
+			Name="GifInfo"
+			ImageBehavior.AnimatedSource="/Images/loadConfig.gif"
+			ToolTip="Дождитесь завершения загрузки прокси!"
+			Height="100"
+			Width="119"
+			Canvas.Left="4" />
+	</Canvas>
+</Window>

@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{3D37BBB9-F8B2-494D-ADB1-5EF8F8969978}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SteamCheCkeR v4.5.1</RootNamespace>
+    <AssemblyName>SteamCheCkeR v4.5.1</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>SteamCheCkeR v4.5.1.ico</ApplicationIcon>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JLeGNet">
+      <HintPath>..\..\..\..\softwares\JleGioH\SteamCheCkeR\JLeGNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vista\u0020Api">
+      <HintPath>..\..\..\..\softwares\JleGioH\SteamCheCkeR\Vista Api.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\..\..\..\softwares\JleGioH\SteamCheCkeR\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WpfAnimatedGif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-{9E293A14-4331-4164-8A72-D7DD77A074D1}.cs" />
+    <Compile Include="Class0.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class10.cs" />
+    <Compile Include="Class2.cs" />
+    <Compile Include="Class30.cs" />
+    <Compile Include="Class35.cs" />
+    <Compile Include="Class4.cs" />
+    <Compile Include="Class5.cs" />
+    <Compile Include="Class8.cs" />
+    <Compile Include="Class9.cs" />
+    <Compile Include="Enum9.cs" />
+    <Compile Include="ns0\lSfgApatkdxsVcGcrktoFd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns0\lSfgApatkdxsVcGcrktoFd.Designer.cs">
+      <DependentUpon>lSfgApatkdxsVcGcrktoFd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns0\rFohpatkdxsVcxLfJKhM7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns0\rFohpatkdxsVcxLfJKhM7.Designer.cs">
+      <DependentUpon>rFohpatkdxsVcxLfJKhM7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SteamCheCkeR\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SteamCheCkeR\BruteSet.cs" />
+    <Compile Include="SteamCheCkeR\LicenseInfo.cs" />
+    <Compile Include="SteamCheCkeR\LogViewer.cs" />
+    <Compile Include="SteamCheCkeR\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SteamCheCkeR\Properties\Resources.cs" />
+    <Compile Include="SteamCheCkeR\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SteamCheCkeR\Proxy\WindowProxy.xaml.cs">
+      <DependentUpon>WindowProxy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SteamCheCkeR\Styles\CustomizedWindow\VS2012WindowStyle.xaml.cs">
+      <DependentUpon>VS2012WindowStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SteamCheCkeR\WindowShutdown.cs" />
+    <Compile Include="SteamCheCkeR\Windows\LikeGames.xaml.cs">
+      <DependentUpon>LikeGames.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SteamCheCkeR\Windows\LoadConfig.xaml.cs">
+      <DependentUpon>LoadConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Whush\Demo\License\WindowCheckLic.xaml.cs">
+      <DependentUpon>WindowCheckLic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Whush\Demo\License\WindowStart.xaml.cs">
+      <DependentUpon>WindowStart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Whush\Demo\Proxy\ProxyLoadWindow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="aR3nbf8dQp2feLmk31.SplashForm.resources" />
+    <EmbeddedResource Include="JLeGEmailAtach" />
+    <EmbeddedResource Include="JLeGEmailFoundText" />
+    <EmbeddedResource Include="JLeGEmailNetFull" />
+    <EmbeddedResource Include="JLeGOnlyFormatter" />
+    <EmbeddedResource Include="JLeGProxy" />
+    <EmbeddedResource Include="JLSteamCheCkeR45" />
+    <EmbeddedResource Include="ns0\lSfgApatkdxsVcGcrktoFd.resources" />
+    <EmbeddedResource Include="SteamCheCkeR\Properties\Resources.resources" />
+    <EmbeddedResource Include="UOP6setK4nyLy1q2bq.pyJL1HaQ5GgPLY67I4" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="SteamCheCkeR\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="SteamCheCkeR\App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="License\licenseinfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Proxy\pwoxyloadwindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SteamCheCkeR\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SteamCheCkeR\Proxy\WindowProxy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SteamCheCkeR\Styles\CustomizedWindow\VS2012WindowStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SteamCheCkeR\Windows\LikeGames.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SteamCheCkeR\Windows\LoadConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="themes\generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Whush\Demo\License\WindowCheckLic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Whush\Demo\License\WindowStart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\bruteset.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\logviewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\windowshutdown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\1256635453_fire_girl.gif" />
+    <Resource Include="images\1361203395_gold_coin_-_stacks.png" />
+    <Resource Include="images\259.png" />
+    <Resource Include="images\add folder.png" />
+    <Resource Include="images\add.png" />
+    <Resource Include="images\annojagdtiger_sdkfz_185.png" />
+    <Resource Include="images\apply.png" />
+    <Resource Include="images\basiccirclegrey.png" />
+    <Resource Include="images\cancel.png" />
+    <Resource Include="images\copy.png" />
+    <Resource Include="images\dota.png" />
+    <Resource Include="images\erase.png" />
+    <Resource Include="images\games.png" />
+    <Resource Include="images\gold-coins-icon-271x300.jpg" />
+    <Resource Include="images\greencircle.png" />
+    <Resource Include="images\info.gif" />
+    <Resource Include="images\info.png" />
+    <Resource Include="images\jager.png" />
+    <Resource Include="images\load.gif" />
+    <Resource Include="images\loadconfig.gif" />
+    <Resource Include="images\loading-animation.gif" />
+    <Resource Include="images\loadmini.png" />
+    <Resource Include="images\logviewer.png" />
+    <Resource Include="images\maxresdefault.jpg" />
+    <Resource Include="images\medallavrinenko1.png" />
+    <Resource Include="images\open.png" />
+    <Resource Include="images\play.png" />
+    <Resource Include="images\proxywindow.png" />
+    <Resource Include="images\redcircle.png" />
+    <Resource Include="images\reset-icon.gif" />
+    <Resource Include="images\save as.png" />
+    <Resource Include="images\settings.png" />
+    <Resource Include="images\sound_accept.png" />
+    <Resource Include="images\sound_delete.png" />
+    <Resource Include="images\stop playing.png" />
+    <Resource Include="images\synchronize.png" />
+    <Resource Include="images\united states military academy icon 06_256x256-32.png" />
+    <Resource Include="images\united states military academy icon 12_256x256-32.png" />
+    <Resource Include="images\world-of-tanks.jpg" />
+    <Resource Include="images\world_of_tanks.jpg" />
+    <Resource Include="mainicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,77 @@
+<Window
+	x:Class="SteamCheCkeR.LicenseInfo" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:gif="http://wpfanimatedgif.codeplex.com"
+	Title="Activate"
+	Height="396"
+	Width="249.756"
+	Icon="/mainicon.ico"
+	WindowStartupLocation="CenterScreen"
+	WindowStyle="None"
+	Style="{StaticResource VS2012WindowStyle}"
+	Topmost="True" xmlns:steamchecker="clr-namespace:SteamCheCkeR"
+	Loaded="method_0">
+	<Canvas
+		Background="#FF000000">
+		<Image
+			Name="GifInfo"
+			ImageBehavior.AnimatedSource="/Images/1256635453_fire_girl.gif"
+			Width="234"
+			RenderTransformOrigin="0.593,0.5"
+			Height="310"
+			HorizontalAlignment="Left" />
+		<Button
+			Name="buttonCopy"
+			Style="{StaticResource MyButtonStyle}"
+			Width="210"
+			Height="36"
+			Canvas.Left="12"
+			Canvas.Top="312"
+			Click="buttonCopy_Click">
+			<ContentControl.ContentTemplate>
+				<DataTemplate>
+					<StackPanel
+						Orientation="Horizontal">
+						<Image
+							Source="/Images/Copy.png"
+							Margin="0, 0,0,0" />
+						<TextBlock
+							Width="Auto"
+							Text=" Копировать в буфер!"
+							VerticalAlignment="Center" />
+					</StackPanel>
+				</DataTemplate>
+			</ContentControl.ContentTemplate>
+		</Button>
+		<TextBox
+			Name="TextLicenceInfo"
+			Background="#00FFFFFF"
+			Foreground="#FFFFFFFF"
+			FontSize="10"
+			IsReadOnly="True"
+			ScrollViewer.VerticalScrollBarVisibility="Auto"
+			TextWrapping="NoWrap"
+			Text=""
+			Height="310"
+			Width="234" />
+		<Label
+			Name="infoNumber"
+			Content="SN:0bc8e45558269349ac213668c9c67451"
+			Foreground="#FFFF0000"
+			FontWeight="Bold"
+			FontSize="18"
+			Height="35"
+			Width="363"
+			RenderTransformOrigin="0.5,0.5"
+			Canvas.Left="-63"
+			Canvas.Top="127">
+			<UIElement.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform />
+					<SkewTransform />
+					<RotateTransform
+						Angle="50.8" />
+					<TranslateTransform />
+				</TransformGroup>
+			</UIElement.RenderTransform>
+		</Label>
+	</Canvas>
+</Window>

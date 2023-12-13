@@ -1,0 +1,1657 @@
+<ResourceDictionary
+	x:Class="SteamCheCkeR.Styles.CustomizedWindow.VS2012WindowStyle" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:customizedwindow="clr-namespace:SteamCheCkeR.Styles.CustomizedWindow">
+	<SolidColorBrush
+		Color="#EFEFF2"
+		x:Key="TitleBarBackgroundBrush" />
+	<SolidColorBrush
+		Color="#FF065991"
+		x:Key="VS2012WindowBorderBrush" />
+	<SolidColorBrush
+		Color="#999999"
+		x:Key="VS2012WindowBorderBrushInactive" />
+	<SolidColorBrush
+		Color="#FFFFFF"
+		x:Key="VS2012WindowStatusForeground" />
+	<SolidColorBrush
+		Color="#FFFFFF"
+		x:Key="VS2012WindowStatusForegroundInactive" />
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="VS2012WindowStyleTitleBarButton">
+		<Setter
+			Property="Focusable"
+			Value="False" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Grid>
+						<Border
+							Name="PART_border"
+							Background="#00FFFFFF" />
+						<ContentPresenter />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								Property="Foreground"
+								Value="#FF808080" />
+							<Setter
+								Property="FontWeight"
+								Value="Bold" />
+						</Trigger>
+						<Trigger
+							Property="IsEnabled"
+							Value="True">
+							<Setter
+								Property="Foreground"
+								Value="#FF000000" />
+							<Setter
+								Property="FontWeight"
+								Value="Bold" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								Property="FontWeight"
+								Value="Bold" />
+							<Setter
+								Property="Foreground"
+								Value="#FFFF0000" />
+							<Setter
+								Property="FontSize"
+								Value="14" />
+						</Trigger>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="PART_border"
+								Property="Background"
+								Value="{StaticResource VS2012WindowBorderBrush}" />
+							<Setter
+								TargetName="PART_border"
+								Property="UIElement.Opacity"
+								Value="1" />
+							<Setter
+								Property="Foreground"
+								Value="#FFF" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="MyButtonStyle">
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Border
+						Name="borderTemplate"
+						Background="#00FFFFFF"
+						BorderBrush="#FFC2FBC2"
+						BorderThickness="2">
+						<ContentPresenter
+							Margin="2"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							RecognizesAccessKey="True" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								Property="Foreground"
+								Value="#FF808080" />
+						</Trigger>
+						<Trigger
+							Property="IsEnabled"
+							Value="True">
+							<Setter
+								Property="Foreground"
+								Value="#FFFFFFFF" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								Property="FontWeight"
+								Value="Bold" />
+							<Setter
+								Property="Foreground"
+								Value="#FF4DCF11" />
+							<Setter
+								Property="UIElement.Effect">
+								<Setter.Value>
+									<DropShadowEffect
+										ShadowDepth="0"
+										Color="Red"
+										BlurRadius="5" />
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="StandartButtonStyle">
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Border
+						Name="borderTemplate"
+						Background="#FFCED3F7"
+						BorderBrush="#FF4DCF11"
+						BorderThickness="2">
+						<ContentPresenter
+							Margin="2"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							RecognizesAccessKey="True" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsEnabled"
+							Value="True">
+							<Setter
+								Property="Foreground"
+								Value="#FF000000" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								Property="FontWeight"
+								Value="Bold" />
+							<Setter
+								Property="Foreground"
+								Value="#FFFF0000" />
+							<Setter
+								Property="UIElement.Effect">
+								<Setter.Value>
+									<DropShadowEffect
+										ShadowDepth="0"
+										Color="Red"
+										BlurRadius="5" />
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="MyButtonStyle2">
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Border
+						Name="borderTemplate"
+						Background="#00FFFFFF"
+						BorderBrush="#FFC2FBC2"
+						BorderThickness="2">
+						<ContentPresenter
+							Margin="2"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							RecognizesAccessKey="True" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								Property="Foreground"
+								Value="#FF808080" />
+						</Trigger>
+						<Trigger
+							Property="IsEnabled"
+							Value="True">
+							<Setter
+								Property="Foreground"
+								Value="#FFFFFFFF" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								Property="Foreground"
+								Value="#FF4DCF11" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type CheckBox}"
+		x:Key="NormalStyleCheckBox2">
+		<Style.Triggers>
+			<Trigger
+				Property="UIElement.IsMouseOver"
+				Value="True">
+				<Setter
+					Property="HorizontalContentAlignment"
+					Value="Center" />
+			</Trigger>
+		</Style.Triggers>
+		<Setter
+			Property="UIElement.SnapsToDevicePixels"
+			Value="True" />
+		<Setter
+			Property="FrameworkElement.OverridesDefaultStyle"
+			Value="True" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type CheckBox}">
+					<BulletDecorator
+						Background="#00FFFFFF">
+						<BulletDecorator.Bullet>
+							<Border
+								Name="Border"
+								Width="13"
+								Height="13"
+								CornerRadius="0"
+								Background="#FFFFFFFF"
+								BorderThickness="1"
+								BorderBrush="#FF04E80E">
+								<Path
+									Name="CheckMark"
+									Width="10"
+									Height="10"
+									SnapsToDevicePixels="False"
+									Stroke="#FF000000"
+									StrokeThickness="2"
+									Data="M1,4 L5,9 M5,9 L9,0" />
+							</Border>
+						</BulletDecorator.Bullet>
+						<ContentPresenter
+							Margin="4,0,0,0"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Left"
+							RecognizesAccessKey="True" />
+					</BulletDecorator>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="false">
+							<Setter
+								TargetName="CheckMark"
+								Property="Visibility"
+								Value="Collapsed" />
+						</Trigger>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="{x:Null}">
+							<Setter
+								TargetName="CheckMark"
+								Property="Data"
+								Value="M0,7 L7,0" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Border"
+								Property="Background"
+								Value="#FFD32727" />
+							<Setter
+								TargetName="Border"
+								Property="BorderBrush"
+								Value="#FFD32727" />
+						</Trigger>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="Border"
+								Property="Background"
+								Value="#E0E0E0" />
+						</Trigger>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								TargetName="Border"
+								Property="Background"
+								Value="#EEEEEE" />
+							<Setter
+								TargetName="Border"
+								Property="BorderBrush"
+								Value="#FF808080" />
+							<Setter
+								Property="Foreground"
+								Value="#FF000000" />
+						</Trigger>
+						<Trigger
+							Property="IsEnabled"
+							Value="True">
+							<Setter
+								TargetName="Border"
+								Property="Background"
+								Value="#EEEEEE" />
+							<Setter
+								TargetName="Border"
+								Property="BorderBrush"
+								Value="#FF04E80E" />
+							<Setter
+								Property="Foreground"
+								Value="#FF000000" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type CheckBox}"
+		x:Key="CircleCheckbox">
+		<Setter
+			Property="FrameworkElement.Cursor"
+			Value="Hand" />
+		<Setter
+			Property="Content"
+			Value="" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type CheckBox}">
+					<Grid>
+						<Ellipse
+							Name="outerEllipse">
+							<Shape.Fill>
+								<RadialGradientBrush>
+									<GradientStop
+										Offset="0"
+										Color="Red" />
+									<GradientStop
+										Offset="0.88"
+										Color="LightCoral" />
+									<GradientStop
+										Offset="1"
+										Color="DarkRed" />
+								</RadialGradientBrush>
+							</Shape.Fill>
+						</Ellipse>
+						<Ellipse
+							Name="highlightCircle"
+							Margin="10">
+							<Shape.Fill>
+								<LinearGradientBrush>
+									<GradientStop
+										Offset="0"
+										Color="Green" />
+									<GradientStop
+										Offset="0.5"
+										Color="LightGreen" />
+									<GradientStop
+										Offset="1"
+										Color="DarkGreen" />
+								</LinearGradientBrush>
+							</Shape.Fill>
+						</Ellipse>
+						<ContentPresenter
+							Name="content"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="True">
+							<Setter
+								TargetName="highlightCircle"
+								Property="Fill">
+								<Setter.Value>
+									<LinearGradientBrush
+										StartPoint="0.3,0"
+										EndPoint="0.7,1">
+										<GradientStop
+											Offset="0"
+											Color="Green" />
+										<GradientStop
+											Offset="0.5"
+											Color="LightGreen" />
+										<GradientStop
+											Offset="1"
+											Color="DarkGreen" />
+									</LinearGradientBrush>
+								</Setter.Value>
+							</Setter>
+							<Setter
+								TargetName="outerEllipse"
+								Property="Fill">
+								<Setter.Value>
+									<RadialGradientBrush>
+										<GradientStop
+											Offset="0"
+											Color="Green" />
+										<GradientStop
+											Offset="0.88"
+											Color="LightGreen" />
+										<GradientStop
+											Offset="1"
+											Color="DarkGreen" />
+									</RadialGradientBrush>
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="False">
+							<Setter
+								TargetName="highlightCircle"
+								Property="Fill">
+								<Setter.Value>
+									<LinearGradientBrush
+										StartPoint="0.3,0"
+										EndPoint="0.7,1">
+										<GradientStop
+											Offset="0"
+											Color="Red" />
+										<GradientStop
+											Offset="0.5"
+											Color="LightCoral" />
+										<GradientStop
+											Offset="1"
+											Color="DarkRed" />
+									</LinearGradientBrush>
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type CheckBox}"
+		x:Key="NormalStyleCheckBox">
+		<Style.Triggers>
+			<Trigger
+				Property="IsEnabled"
+				Value="True">
+				<Setter
+					Property="BorderThickness"
+					Value="1" />
+				<Setter
+					Property="BorderBrush"
+					Value="#FF04E80E" />
+				<Setter
+					Property="Foreground"
+					Value="#FFD32727" />
+			</Trigger>
+			<Trigger
+				Property="ToggleButton.IsChecked"
+				Value="True">
+				<Setter
+					Property="BorderThickness"
+					Value="1" />
+				<Setter
+					Property="BorderBrush"
+					Value="#FF04E80E" />
+				<Setter
+					Property="Foreground"
+					Value="#FFFFFFFF" />
+			</Trigger>
+			<Trigger
+				Property="IsEnabled"
+				Value="True">
+				<Setter
+					Property="Foreground"
+					Value="#FFFFFFFF" />
+			</Trigger>
+			<Trigger
+				Property="UIElement.IsMouseOver"
+				Value="True">
+				<Setter
+					Property="BorderThickness"
+					Value="1" />
+				<Setter
+					Property="BorderBrush"
+					Value="#FF04E80E" />
+				<Setter
+					Property="HorizontalContentAlignment"
+					Value="Center" />
+				<Setter
+					Property="Foreground"
+					Value="#FF04E80E" />
+			</Trigger>
+		</Style.Triggers>
+		<Setter
+			Property="UIElement.SnapsToDevicePixels"
+			Value="True" />
+		<Setter
+			Property="FrameworkElement.OverridesDefaultStyle"
+			Value="True" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type CheckBox}">
+					<BulletDecorator
+						Background="#00FFFFFF">
+						<BulletDecorator.Bullet>
+							<Border
+								Name="Border"
+								Width="13"
+								Height="13"
+								CornerRadius="0"
+								Background="#FFFFFFFF"
+								BorderThickness="1"
+								BorderBrush="#FF04E80E">
+								<Path
+									Name="CheckMark"
+									Width="10"
+									Height="10"
+									SnapsToDevicePixels="False"
+									Stroke="#FF000000"
+									StrokeThickness="2"
+									Data="M1,4 L5,9 M5,9 L9,0" />
+							</Border>
+						</BulletDecorator.Bullet>
+						<ContentPresenter
+							Margin="4,0,0,0"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Left"
+							RecognizesAccessKey="True" />
+					</BulletDecorator>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Border"
+								Property="Background"
+								Value="#FFD32727" />
+							<Setter
+								TargetName="Border"
+								Property="BorderBrush"
+								Value="#FFD32727" />
+						</Trigger>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="Border"
+								Property="Background"
+								Value="#E0E0E0" />
+						</Trigger>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								TargetName="Border"
+								Property="Background"
+								Value="#EEEEEE" />
+							<Setter
+								TargetName="Border"
+								Property="BorderBrush"
+								Value="#FF808080" />
+							<Setter
+								Property="Foreground"
+								Value="#FF000000" />
+						</Trigger>
+						<Trigger
+							Property="IsEnabled"
+							Value="True">
+							<Setter
+								TargetName="Border"
+								Property="Background"
+								Value="#EEEEEE" />
+							<Setter
+								TargetName="Border"
+								Property="BorderBrush"
+								Value="#FF04E80E" />
+							<Setter
+								Property="Foreground"
+								Value="#FF000000" />
+						</Trigger>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="false">
+							<Setter
+								TargetName="CheckMark"
+								Property="Visibility"
+								Value="Collapsed" />
+							<Setter
+								Property="Foreground"
+								Value="#FFFFFFFF" />
+						</Trigger>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="{x:Null}">
+							<Setter
+								TargetName="CheckMark"
+								Property="Data"
+								Value="M0,7 L7,0" />
+							<Setter
+								Property="Foreground"
+								Value="#FFFFFFFF" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type RadioButton}"
+		x:Key="ButtonRadioButtonStyle">
+		<Setter
+			Property="UIElement.SnapsToDevicePixels"
+			Value="True" />
+		<Setter
+			Property="FrameworkElement.OverridesDefaultStyle"
+			Value="True" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type RadioButton}">
+					<BulletDecorator
+						Background="#FF000000"
+						Cursor="Hand">
+						<BulletDecorator.Bullet>
+							<Grid
+								Height="12"
+								Width="12">
+								<Border
+									Name="RadioOuter"
+									Background="#00FFFFFF"
+									BorderBrush="#FF808080"
+									BorderThickness="2"
+									CornerRadius="8" />
+								<Border
+									Name="RadioMark"
+									CornerRadius="8"
+									Margin="4"
+									Background="#FFFFFFFF"
+									Visibility="Hidden" />
+							</Grid>
+						</BulletDecorator.Bullet>
+						<TextBlock
+							Margin="3,1,0,0"
+							Foreground="#FFFFFFFF"
+							FontFamily="Calibri"
+							FontSize="12">
+							<ContentPresenter />
+						</TextBlock>
+					</BulletDecorator>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="true">
+							<Setter
+								TargetName="RadioMark"
+								Property="Visibility"
+								Value="Visible" />
+							<Setter
+								TargetName="RadioOuter"
+								Property="BorderBrush"
+								Value="#FF04E80E" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Label}"
+		x:Key="StyleLabel">
+		<Style.Triggers>
+			<Trigger
+				Property="UIElement.IsMouseOver"
+				Value="True">
+				<Setter
+					Property="BorderThickness"
+					Value="1" />
+				<Setter
+					Property="BorderBrush"
+					Value="#FF0881F9" />
+				<Setter
+					Property="HorizontalContentAlignment"
+					Value="Center" />
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type ListBox}"
+		x:Key="{x:Type ListBox}">
+		<Style.Triggers>
+			<Trigger
+				Property="Selector.IsSelected"
+				Value="True">
+				<Setter
+					Property="HorizontalContentAlignment"
+					Value="Center" />
+				<Setter
+					Property="Foreground"
+					Value="#FF808080" />
+			</Trigger>
+		</Style.Triggers>
+		<Setter
+			Property="UIElement.SnapsToDevicePixels"
+			Value="True" />
+		<Setter
+			Property="FrameworkElement.OverridesDefaultStyle"
+			Value="True" />
+		<Setter
+			Property="MinWidth"
+			Value="120" />
+		<Setter
+			Property="MinHeight"
+			Value="95" />
+		<Setter
+			Property="Foreground"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="Foreground"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="Foreground"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type ListBox}">
+					<Border
+						Name="Border"
+						Background="#FF000000"
+						BorderBrush="#FF0881F9"
+						BorderThickness="1"
+						CornerRadius="2">
+						<ScrollViewer
+							Margin="0"
+							Focusable="False">
+							<StackPanel
+								Margin="2"
+								IsItemsHost="True" />
+						</ScrollViewer>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Window}"
+		x:Key="VS2012WindowStyle">
+		<Setter
+			Property="Window.AllowsTransparency"
+			Value="True" />
+		<Setter
+			Property="Window.WindowStyle"
+			Value="None" />
+		<Setter
+			Property="Background"
+			Value="#00FFFFFF" />
+		<Setter
+			Property="Window.ResizeMode"
+			Value="CanResizeWithGrip" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Window}">
+					<Grid
+						Margin="7"
+						TextOptions.TextRenderingMode="ClearType"
+						TextOptions.TextFormattingMode="Display">
+						<Border
+							Name="PART_Border"
+							Width="Auto"
+							Height="Auto"
+							Background="#EFEFF2"
+							BorderThickness="1"
+							Padding="0"
+							BorderBrush="{StaticResource VS2012WindowBorderBrush}">
+							<UIElement.Effect>
+								<DropShadowEffect
+									Color="black"
+									Opacity="0.5"
+									BlurRadius="7"
+									ShadowDepth="2"
+									Direction="315" />
+							</UIElement.Effect>
+							<DockPanel
+								HorizontalAlignment="Stretch"
+								Background="#00FFFFFF"
+								VerticalAlignment="Stretch">
+								<!--Неизвестный ID соединения: 1-->
+								<Border
+									Name="TitleBar"
+									DockPanel.Dock="Top"
+									BorderThickness="0"
+									Background="{StaticResource TitleBarBackgroundBrush}">
+									<Grid
+										Height="32">
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition
+												Width="36" />
+											<ColumnDefinition />
+											<ColumnDefinition
+												Width="34" />
+											<ColumnDefinition
+												Width="34" />
+											<ColumnDefinition
+												Width="34" />
+										</Grid.ColumnDefinitions>
+										<!--Неизвестный ID соединения: 2-->
+										<Image
+											Name="Icon"
+											Grid.Column="0"
+											HorizontalAlignment="Right"
+											Margin="4,-7,0,7"
+											Width="32"
+											Height="32"
+											Source="{Binding Path=Icon, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+										<TextBlock
+											Name="Caption"
+											Grid.Column="1"
+											HorizontalAlignment="Left"
+											VerticalAlignment="Center"
+											Margin="4,0,0,0"
+											FontFamily="Segoe UI"
+											FontSize="12"
+											FontWeight="Bold"
+											Opacity="0.66"
+											Text="{Binding Path=Title, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+										<!--Неизвестный ID соединения: 3-->
+										<Button
+											Name="MinButton"
+											Grid.Column="3"
+											VerticalAlignment="Top"
+											Width="34"
+											Height="26"
+											Style="{StaticResource VS2012WindowStyleTitleBarButton}">
+											<Grid
+												MaxHeight="9"
+												MaxWidth="9">
+												<Path
+													StrokeThickness="1"
+													Stretch="None"
+													RenderOptions.EdgeMode="Aliased"
+													Data="M0,8 L8,8 M0,7 L8,7 M0,6 L8,6"
+													Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
+											</Grid>
+										</Button>
+										<!--Неизвестный ID соединения: 4-->
+										<Button
+											Name="MaxButton"
+											Grid.Column="2"
+											VerticalAlignment="Top"
+											Width="0"
+											Height="0"
+											Style="{StaticResource VS2012WindowStyleTitleBarButton}">
+											<Grid
+												MaxHeight="9"
+												MaxWidth="9">
+												<Path
+													Name="PART_MaxButton_Path"
+													StrokeThickness="1"
+													Stretch="None"
+													RenderOptions.EdgeMode="Aliased"
+													Data="M0,0 L8,0 L8,8 L0,8 L0,0 M0,1 L8,1 M0,2 L8,2"
+													Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
+											</Grid>
+										</Button>
+										<!--Неизвестный ID соединения: 5-->
+										<Button
+											Name="CloseButton"
+											Grid.Column="4"
+											VerticalAlignment="Top"
+											Width="34"
+											Height="26"
+											Style="{StaticResource VS2012WindowStyleTitleBarButton}">
+											<Grid
+												MaxHeight="9"
+												MaxWidth="9">
+												<Path
+													StrokeThickness="1.5"
+													Stretch="None"
+													Data="M0,0 L8,8 M0,8 L8,0"
+													Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
+											</Grid>
+										</Button>
+									</Grid>
+								</Border>
+								<ContentPresenter />
+							</DockPanel>
+						</Border>
+						<!--Неизвестный ID соединения: 6-->
+						<Line
+							Name="lnSizeNorth"
+							Stroke="#00FFFFFF"
+							Cursor="SizeNS"
+							X1="1"
+							X2="{TemplateBinding ActualWidth}"
+							Y1="1"
+							Y2="1"
+							StrokeThickness="3" />
+						<!--Неизвестный ID соединения: 7-->
+						<Line
+							Name="lnSizeSouth"
+							Stroke="#00FFFFFF"
+							VerticalAlignment="Bottom"
+							Cursor="SizeNS"
+							X1="1"
+							X2="{TemplateBinding ActualWidth}"
+							Y1="{TemplateBinding ActualHeight}"
+							Y2="{TemplateBinding ActualHeight}"
+							StrokeThickness="3" />
+						<!--Неизвестный ID соединения: 8-->
+						<Line
+							Name="lnSizeWest"
+							Stroke="#00FFFFFF"
+							Cursor="SizeWE"
+							X1="1"
+							X2="1"
+							Y1="1"
+							Y2="{TemplateBinding ActualHeight}"
+							StrokeThickness="3" />
+						<!--Неизвестный ID соединения: 9-->
+						<Line
+							Name="lnSizeEast"
+							Stroke="#00FFFFFF"
+							HorizontalAlignment="Right"
+							Cursor="SizeWE"
+							X1="{TemplateBinding ActualWidth}"
+							X2="{TemplateBinding ActualWidth}"
+							Y1="1"
+							Y2="{TemplateBinding ActualHeight}"
+							StrokeThickness="3" />
+						<!--Неизвестный ID соединения: 10-->
+						<Rectangle
+							Name="rectSizeNorthWest"
+							Cursor="SizeNWSE"
+							Fill="#00FFFFFF"
+							Width="5"
+							Height="5"
+							VerticalAlignment="Top"
+							HorizontalAlignment="Left" />
+						<!--Неизвестный ID соединения: 11-->
+						<Rectangle
+							Name="rectSizeNorthEast"
+							Cursor="SizeNESW"
+							Fill="#00FFFFFF"
+							Width="5"
+							Height="5"
+							VerticalAlignment="Top"
+							HorizontalAlignment="Right" />
+						<!--Неизвестный ID соединения: 12-->
+						<Rectangle
+							Name="rectSizeSouthWest"
+							Cursor="SizeNESW"
+							Fill="#00FFFFFF"
+							Width="5"
+							Height="5"
+							VerticalAlignment="Bottom"
+							HorizontalAlignment="Left" />
+						<!--Неизвестный ID соединения: 13-->
+						<Rectangle
+							Name="rectSizeSouthEast"
+							Cursor="SizeNWSE"
+							Fill="#00FFFFFF"
+							Width="5"
+							Height="5"
+							VerticalAlignment="Bottom"
+							HorizontalAlignment="Right" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="Window.WindowState"
+							Value="Maximized">
+							<Setter
+								TargetName="PART_MaxButton_Path"
+								Property="Data"
+								Value="M0,3 L5,3 L5,8 L0,8 L0,3 M0,4 L5,4 M3,0 L8,0 L8,5 L7,5 M3,1 L8,1" />
+						</Trigger>
+						<Trigger
+							Property="Window.IsActive"
+							Value="False">
+							<Setter
+								TargetName="PART_Border"
+								Property="BorderBrush"
+								Value="{StaticResource VS2012WindowBorderBrushInactive}" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Resources>
+			<ResourceDictionary>
+				<Style
+					TargetType="{x:Type StatusBar}"
+					x:Key="{x:Type StatusBar}">
+					<Style.Triggers>
+						<DataTrigger
+							Value="True"
+							Binding="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}}">
+							<Setter
+								Property="Foreground"
+								Value="{StaticResource VS2012WindowStatusForeground}" />
+							<Setter
+								Property="Background"
+								Value="{StaticResource VS2012WindowBorderBrush}" />
+						</DataTrigger>
+						<DataTrigger
+							Value="False"
+							Binding="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}}">
+							<Setter
+								Property="Foreground"
+								Value="{StaticResource VS2012WindowStatusForegroundInactive}" />
+							<Setter
+								Property="Background"
+								Value="{StaticResource VS2012WindowBorderBrushInactive}" />
+						</DataTrigger>
+					</Style.Triggers>
+				</Style>
+			</ResourceDictionary>
+		</Style.Resources>
+	</Style>
+	<LinearGradientBrush
+		StartPoint="0,0"
+		EndPoint="0,1"
+		x:Key="CustomBrush">
+		<GradientBrush.GradientStops>
+			<GradientStop
+				Offset="0"
+				Color="#FFE3F4FC" />
+			<GradientStop
+				Offset="0.38"
+				Color="#FFD8EFFC" />
+			<GradientStop
+				Offset="0.38"
+				Color="#FFBEE6FD" />
+			<GradientStop
+				Offset="1"
+				Color="#FFA6D9F4" />
+		</GradientBrush.GradientStops>
+	</LinearGradientBrush>
+	<SolidColorBrush
+		Color="AliceBlue"
+		x:Key="CustomBrush1" />
+	<LinearGradientBrush
+		StartPoint="0,0"
+		EndPoint="0,1"
+		x:Key="NormalBrush">
+		<GradientBrush.GradientStops>
+			<GradientStopCollection>
+				<GradientStop
+					Color="#FFF"
+					Offset="0.0" />
+				<GradientStop
+					Color="#CCC"
+					Offset="1.0" />
+			</GradientStopCollection>
+		</GradientBrush.GradientStops>
+	</LinearGradientBrush>
+	<LinearGradientBrush
+		StartPoint="0,0"
+		EndPoint="1,0"
+		x:Key="HorizontalNormalBrush">
+		<GradientBrush.GradientStops>
+			<GradientStopCollection>
+				<GradientStop
+					Color="#FFF"
+					Offset="0.0" />
+				<GradientStop
+					Color="#CCC"
+					Offset="1.0" />
+			</GradientStopCollection>
+		</GradientBrush.GradientStops>
+	</LinearGradientBrush>
+	<LinearGradientBrush
+		StartPoint="0,0"
+		EndPoint="0,1"
+		x:Key="LightBrush">
+		<GradientBrush.GradientStops>
+			<GradientStopCollection>
+				<GradientStop
+					Color="#FFF"
+					Offset="0.0" />
+				<GradientStop
+					Color="#EEE"
+					Offset="1.0" />
+			</GradientStopCollection>
+		</GradientBrush.GradientStops>
+	</LinearGradientBrush>
+	<LinearGradientBrush
+		StartPoint="0,0"
+		EndPoint="1,0"
+		x:Key="HorizontalLightBrush">
+		<GradientBrush.GradientStops>
+			<GradientStopCollection>
+				<GradientStop
+					Color="#FFF"
+					Offset="0.0" />
+				<GradientStop
+					Color="#EEE"
+					Offset="1.0" />
+			</GradientStopCollection>
+		</GradientBrush.GradientStops>
+	</LinearGradientBrush>
+	<LinearGradientBrush
+		StartPoint="0,0"
+		EndPoint="0,1"
+		x:Key="DarkBrush">
+		<GradientBrush.GradientStops>
+			<GradientStopCollection>
+				<GradientStop
+					Color="#FFF"
+					Offset="0.0" />
+				<GradientStop
+					Color="#AAA"
+					Offset="1.0" />
+			</GradientStopCollection>
+		</GradientBrush.GradientStops>
+	</LinearGradientBrush>
+	<LinearGradientBrush
+		StartPoint="0,0"
+		EndPoint="0,1"
+		x:Key="PressedBrush">
+		<GradientBrush.GradientStops>
+			<GradientStopCollection>
+				<GradientStop
+					Color="#BBB"
+					Offset="0.0" />
+				<GradientStop
+					Color="#EEE"
+					Offset="0.1" />
+				<GradientStop
+					Color="#EEE"
+					Offset="0.9" />
+				<GradientStop
+					Color="#FFF"
+					Offset="1.0" />
+			</GradientStopCollection>
+		</GradientBrush.GradientStops>
+	</LinearGradientBrush>
+	<SolidColorBrush
+		Color="#888"
+		x:Key="DisabledForegroundBrush" />
+	<SolidColorBrush
+		Color="#EEE"
+		x:Key="DisabledBackgroundBrush" />
+	<SolidColorBrush
+		Color="#FFF"
+		x:Key="WindowBackgroundBrush" />
+	<SolidColorBrush
+		Color="#DDD"
+		x:Key="SelectedBackgroundBrush" />
+	<SolidColorBrush
+		Color="White"
+		x:Key="NormalForegroundBrush" />
+	<LinearGradientBrush
+		StartPoint="0,0"
+		EndPoint="0,1"
+		x:Key="NormalBorderBrush">
+		<GradientBrush.GradientStops>
+			<GradientStopCollection>
+				<GradientStop
+					Color="#CCC"
+					Offset="0.0" />
+				<GradientStop
+					Color="#444"
+					Offset="1.0" />
+			</GradientStopCollection>
+		</GradientBrush.GradientStops>
+	</LinearGradientBrush>
+	<LinearGradientBrush
+		StartPoint="0,0"
+		EndPoint="1,0"
+		x:Key="HorizontalNormalBorderBrush">
+		<GradientBrush.GradientStops>
+			<GradientStopCollection>
+				<GradientStop
+					Color="#CCC"
+					Offset="0.0" />
+				<GradientStop
+					Color="#444"
+					Offset="1.0" />
+			</GradientStopCollection>
+		</GradientBrush.GradientStops>
+	</LinearGradientBrush>
+	<LinearGradientBrush
+		StartPoint="0,0"
+		EndPoint="0,1"
+		x:Key="DefaultedBorderBrush">
+		<GradientBrush.GradientStops>
+			<GradientStopCollection>
+				<GradientStop
+					Color="#777"
+					Offset="0.0" />
+				<GradientStop
+					Color="#000"
+					Offset="1.0" />
+			</GradientStopCollection>
+		</GradientBrush.GradientStops>
+	</LinearGradientBrush>
+	<LinearGradientBrush
+		StartPoint="0,0"
+		EndPoint="0,1"
+		x:Key="PressedBorderBrush">
+		<GradientBrush.GradientStops>
+			<GradientStopCollection>
+				<GradientStop
+					Color="#444"
+					Offset="0.0" />
+				<GradientStop
+					Color="#888"
+					Offset="1.0" />
+			</GradientStopCollection>
+		</GradientBrush.GradientStops>
+	</LinearGradientBrush>
+	<SolidColorBrush
+		Color="#AAA"
+		x:Key="DisabledBorderBrush" />
+	<SolidColorBrush
+		Color="#888"
+		x:Key="SolidBorderBrush" />
+	<SolidColorBrush
+		Color="#AAA"
+		x:Key="LightBorderBrush" />
+	<SolidColorBrush
+		Color="#444"
+		x:Key="GlyphBrush" />
+	<SolidColorBrush
+		Color="#DDD"
+		x:Key="LightColorBrush" />
+	<Style
+		TargetType="{x:Type TabItem}"
+		x:Key="TabControlStyle">
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type TabItem}">
+					<Grid>
+						<Border
+							Name="Border"
+							Background="#00FFFFFF"
+							BorderBrush="#FF808080"
+							BorderThickness="1,1,1,1"
+							CornerRadius="6,6,0,0">
+							<ContentPresenter
+								Name="ContentSite"
+								VerticalAlignment="Center"
+								HorizontalAlignment="Center"
+								ContentSource="Header"
+								Margin="0,0,0,0" />
+						</Border>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="TabItem.IsSelected"
+							Value="True">
+							<Setter
+								TargetName="Border"
+								Property="Background"
+								Value="#FFF0F8FF" />
+							<Setter
+								Property="HorizontalContentAlignment"
+								Value="Center" />
+							<Setter
+								Property="Foreground"
+								Value="#FF000000" />
+							<Setter
+								Property="FontSize"
+								Value="14" />
+						</Trigger>
+						<Trigger
+							Property="TabItem.IsSelected"
+							Value="False">
+							<Setter
+								Property="HorizontalContentAlignment"
+								Value="Center" />
+							<Setter
+								Property="Foreground"
+								Value="#FFFFFFFF" />
+							<Setter
+								Property="FontSize"
+								Value="14" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<ControlTemplate
+		TargetType="{x:Type ToggleButton}"
+		x:Key="ComboBoxToggleButtonTemplate">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition
+					Width="16" />
+			</Grid.ColumnDefinitions>
+			<Border
+				Name="Border"
+				BorderBrush="#FF000000"
+				CornerRadius="2,2,2,2"
+				BorderThickness="1,1,1,1"
+				Background="#FFF5F5F5"
+				Grid.ColumnSpan="2" />
+			<Border
+				Margin="0,0,0,0"
+				CornerRadius="2,0,0,2"
+				BorderThickness="1,1,1,1"
+				Background="#FF211F1F"
+				Grid.Column="0"
+				BorderBrush="{StaticResource NormalBorderBrush}" />
+			<Path
+				Name="Arrow"
+				Margin="0,0,3,0"
+				Data="M0,0 L4,4 L8,0"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"
+				Width="8"
+				Grid.Column="1"
+				Fill="{StaticResource GlyphBrush}" />
+		</Grid>
+		<ControlTemplate.Triggers>
+			<Trigger
+				Property="UIElement.IsMouseOver"
+				Value="True">
+				<Setter
+					TargetName="Border"
+					Property="Background"
+					Value="#FFF5F5F5" />
+			</Trigger>
+			<Trigger
+				Property="ToggleButton.IsChecked"
+				Value="True">
+				<Setter
+					TargetName="Border"
+					Property="Background"
+					Value="#FFF5F5F5" />
+				<Setter
+					TargetName="Arrow"
+					Property="Fill"
+					Value="#FF8D979E" />
+			</Trigger>
+			<Trigger
+				Property="IsEnabled"
+				Value="False">
+				<Setter
+					TargetName="Border"
+					Property="Background"
+					Value="{StaticResource DisabledBackgroundBrush}" />
+				<Setter
+					TargetName="Border"
+					Property="BorderBrush"
+					Value="{StaticResource DisabledBorderBrush}" />
+				<Setter
+					Property="Foreground"
+					Value="{StaticResource DisabledForegroundBrush}" />
+				<Setter
+					TargetName="Arrow"
+					Property="Fill"
+					Value="#66FFFFFF" />
+			</Trigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+	<ControlTemplate
+		TargetType="{x:Type TextBox}"
+		x:Key="ComboBoxTextBoxTemplate">
+		<Border
+			Name="PART_ContentHost"
+			Background="#FFFFFFFF"
+			Focusable="False" />
+	</ControlTemplate>
+	<Style
+		TargetType="{x:Type ComboBoxItem}"
+		x:Key="{x:Type ComboBoxItem}">
+		<Setter
+			Property="UIElement.SnapsToDevicePixels"
+			Value="True" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Foreground"
+			Value="#FF808080" />
+		<Setter
+			Property="FrameworkElement.OverridesDefaultStyle"
+			Value="True" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type ComboBoxItem}">
+					<Border
+						Name="Border"
+						SnapsToDevicePixels="True"
+						Padding="2,2,2,2">
+						<ContentPresenter
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							Content="{TemplateBinding Content}" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="ComboBoxItem.IsHighlighted"
+							Value="True">
+							<Setter
+								Property="Foreground"
+								Value="#FF000000" />
+							<Setter
+								TargetName="Border"
+								Property="Background"
+								Value="{StaticResource CustomBrush1}" />
+						</Trigger>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								Property="Foreground"
+								Value="{StaticResource DisabledForegroundBrush}" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type ComboBox}"
+		x:Key="MetroComboBox">
+		<Setter
+			Property="UIElement.SnapsToDevicePixels"
+			Value="True" />
+		<Setter
+			Property="FrameworkElement.OverridesDefaultStyle"
+			Value="True" />
+		<Setter
+			Property="HorizontalScrollBarVisibility"
+			Value="Auto" />
+		<Setter
+			Property="VerticalScrollBarVisibility"
+			Value="Auto" />
+		<Setter
+			Property="CanContentScroll"
+			Value="True" />
+		<Setter
+			Property="Foreground"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type ComboBox}">
+					<Grid>
+						<ToggleButton
+							Name="ToggleButton"
+							ClickMode="Press"
+							Focusable="False"
+							Grid.Column="2"
+							Template="{StaticResource ComboBoxToggleButtonTemplate}"
+							IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+						<ContentPresenter
+							Name="ContentSite"
+							Margin="3,3,23,3"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+							Content="{TemplateBinding SelectionBoxItem}"
+							IsHitTestVisible="False" />
+						<TextBox
+							x:XmlAttributeProperties.XmlSpace="preserve"
+							Name="PART_EditableTextBox"
+							Margin="3,3,23,3"
+							Visibility="Hidden"
+							HorizontalAlignment="Center"
+							HorizontalContentAlignment="Center"
+							Background="#00FFFFFF"
+							VerticalAlignment="Center"
+							IsReadOnly="False"
+							Focusable="True"
+							Template="{StaticResource ComboBoxTextBoxTemplate}"
+							Style="{x:Null}" />
+						<Popup
+							Name="Popup"
+							Placement="Bottom"
+							Focusable="False"
+							AllowsTransparency="True"
+							IsOpen="{TemplateBinding IsDropDownOpen}"
+							PopupAnimation="Fade">
+							<Grid
+								Name="DropDown"
+								MinWidth="{TemplateBinding ActualWidth}"
+								MaxHeight="{TemplateBinding MaxDropDownHeight}"
+								SnapsToDevicePixels="True"
+								Background="#FF000000">
+								<Border
+									Name="DropDownBorder"
+									BorderThickness="1,1,1,1"
+									Background="#FF211F1F"
+									BorderBrush="{StaticResource NormalBorderBrush}" />
+								<ScrollViewer
+									Margin="4,6,4,6"
+									SnapsToDevicePixels="True">
+									<ItemsPresenter
+										KeyboardNavigation.DirectionalNavigation="Contained" />
+								</ScrollViewer>
+							</Grid>
+						</Popup>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="ItemsControl.HasItems"
+							Value="False">
+							<Setter
+								TargetName="DropDownBorder"
+								Property="MinHeight"
+								Value="95" />
+						</Trigger>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								Property="Foreground"
+								Value="{StaticResource DisabledForegroundBrush}" />
+						</Trigger>
+						<Trigger
+							Property="ItemsControl.IsGrouping"
+							Value="True">
+							<Setter
+								Property="CanContentScroll"
+								Value="False" />
+						</Trigger>
+						<Trigger
+							SourceName="Popup"
+							Property="Window.AllowsTransparency"
+							Value="True">
+							<Setter
+								TargetName="DropDownBorder"
+								Property="Border.CornerRadius"
+								Value="4" />
+							<Setter
+								TargetName="DropDownBorder"
+								Property="Margin"
+								Value="0,2,0,0" />
+						</Trigger>
+						<Trigger
+							Property="ComboBox.IsEditable"
+							Value="True">
+							<Setter
+								Property="KeyboardNavigation.IsTabStop"
+								Value="False" />
+							<Setter
+								TargetName="PART_EditableTextBox"
+								Property="Visibility"
+								Value="Visible" />
+							<Setter
+								TargetName="ContentSite"
+								Property="Visibility"
+								Value="Hidden" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type ListBox}"
+		x:Key="MetroListBoxItem">
+		<Setter
+			Property="Margin"
+			Value="1" />
+		<Setter
+			Property="Background"
+			Value="#FF211F1F" />
+		<Setter
+			Property="BorderThickness"
+			Value="1" />
+		<Setter
+			Property="BorderBrush"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="Foreground"
+			Value="#FFFFFFFF" />
+	</Style>
+	<Style
+		TargetType="{x:Type TextBox}"
+		x:Key="MetroTextBoxItem">
+		<Setter
+			Property="Margin"
+			Value="1" />
+		<Setter
+			Property="Background"
+			Value="#FF211F1F" />
+		<Setter
+			Property="VerticalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="BorderThickness"
+			Value="1" />
+		<Setter
+			Property="BorderBrush"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="Foreground"
+			Value="#FFFFFFFF" />
+	</Style>
+</ResourceDictionary>

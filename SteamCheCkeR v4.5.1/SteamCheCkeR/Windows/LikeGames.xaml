@@ -1,0 +1,115 @@
+<Window
+	x:Class="SteamCheCkeR.Windows.LikeGames" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="Like Game List"
+	Height="320"
+	Width="243"
+	MaxHeight="320"
+	MaxWidth="243"
+	MinHeight="320"
+	MinWidth="243"
+	Icon="/mainicon.ico"
+	WindowStartupLocation="CenterScreen"
+	WindowStyle="None"
+	Style="{StaticResource VS2012WindowStyle}" xmlns:windows="clr-namespace:SteamCheCkeR.Windows"
+	Loaded="method_0">
+	<Canvas
+		Background="#FF000000">
+		<ListBox
+			Name="listBoxLike"
+			IsEnabled="True"
+			SelectionMode="Multiple"
+			Canvas.Left="1"
+			Canvas.Top="4"
+			Width="226"
+			Height="157"
+			KeyDown="listBoxLike_KeyDown" />
+		<TextBox
+			Name="textBoxBlack"
+			Style="{StaticResource MetroTextBoxItem}"
+			HorizontalContentAlignment="Center"
+			Margin="0"
+			Canvas.Left="2"
+			Canvas.Top="165"
+			Width="225" />
+		<Button
+			Name="ButonDelBlack"
+			IsEnabled="True"
+			ToolTip="Удалить"
+			Content=""
+			Style="{StaticResource MyButtonStyle}"
+			ScrollViewer.HorizontalScrollBarVisibility="Auto"
+			Height="30"
+			Canvas.Left="118"
+			Canvas.Top="192"
+			Width="99"
+			Click="ButonDelBlack_Click">
+			<ContentControl.ContentTemplate>
+				<DataTemplate>
+					<StackPanel
+						Orientation="Horizontal"
+						Width="98">
+						<Image
+							Source="/Images/Cancel.png"
+							Margin="0, 0,0,0" />
+						<TextBlock
+							Width="Auto"
+							Text="     Удалить"
+							FontSize="10"
+							VerticalAlignment="Center" />
+					</StackPanel>
+				</DataTemplate>
+			</ContentControl.ContentTemplate>
+		</Button>
+		<Button
+			Name="ButonAddUrlProxy"
+			IsEnabled="True"
+			ToolTip="Добавить"
+			Style="{StaticResource MyButtonStyle}"
+			Canvas.Left="10"
+			Canvas.Top="192"
+			Width="99"
+			Height="30"
+			Click="ButonAddUrlProxy_Click">
+			<ContentControl.ContentTemplate>
+				<DataTemplate>
+					<StackPanel
+						Orientation="Horizontal"
+						Width="133">
+						<Image
+							Source="/Images/Add.png"
+							Margin="0, 0,0,0" />
+						<TextBlock
+							Width="Auto"
+							Text="      Добавить"
+							FontSize="10"
+							VerticalAlignment="Center" />
+					</StackPanel>
+				</DataTemplate>
+			</ContentControl.ContentTemplate>
+		</Button>
+		<Button
+			Name="buttonStart"
+			Content="OK"
+			IsEnabled="True"
+			Style="{StaticResource MyButtonStyle}"
+			Canvas.Left="57"
+			Canvas.Top="227"
+			Click="buttonStart_Click">
+			<ContentControl.ContentTemplate>
+				<DataTemplate>
+					<StackPanel
+						Orientation="Horizontal"
+						Width="107">
+						<Image
+							Source="/Images/Play.png"
+							Margin="0, 0,0,0" />
+						<TextBlock
+							Width="73"
+							Text="      OK"
+							VerticalAlignment="Center" />
+					</StackPanel>
+				</DataTemplate>
+			</ContentControl.ContentTemplate>
+		</Button>
+	</Canvas>
+</Window>

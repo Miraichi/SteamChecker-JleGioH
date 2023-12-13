@@ -1,0 +1,62 @@
+<Window
+	x:Class="SteamCheCkeR.WindowShutdown" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+	Title="SteamCheCkeR by JLeGioH"
+	Height="170"
+	Width="353"
+	MaxHeight="170"
+	MaxWidth="353"
+	MinHeight="170"
+	MinWidth="353"
+	Icon="/mainicon.ico"
+	WindowStartupLocation="CenterScreen"
+	WindowStyle="None"
+	Style="{DynamicResource VS2012WindowStyle}" xmlns:steamchecker="clr-namespace:SteamCheCkeR">
+	<Canvas
+		Background="#FF000000">
+		<Button
+			Name="ButonStop"
+			Content=""
+			Style="{StaticResource MyButtonStyle}"
+			Width="164"
+			Height="36"
+			Canvas.Left="84"
+			Canvas.Top="80"
+			Click="ButonStop_Click">
+			<ContentControl.ContentTemplate>
+				<DataTemplate>
+					<StackPanel
+						Orientation="Horizontal"
+						Width="158">
+						<Image
+							Source="/Images/Stop playing.png"
+							Margin="0, 0,0,0" />
+						<TextBlock
+							Width="Auto"
+							Text="            ОТМЕНА"
+							VerticalAlignment="Center" />
+					</StackPanel>
+				</DataTemplate>
+			</ContentControl.ContentTemplate>
+		</Button>
+		<ProgressBar
+			Name="progresBar"
+			Height="18"
+			Canvas.Top="31"
+			Maximum="60"
+			Width="337" />
+		<Label
+			Name="labeltick"
+			Content="60 секунд до выключения ПК"
+			HorizontalContentAlignment="Center"
+			Foreground="#FFFFFFFF"
+			FontSize="14"
+			Canvas.Top="50"
+			Width="337" />
+		<Label
+			Content="Проверка завершена!!!"
+			Foreground="#FFFFFFFF"
+			HorizontalContentAlignment="Center"
+			FontSize="14"
+			Width="337" />
+	</Canvas>
+</Window>

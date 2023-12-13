@@ -1,0 +1,62 @@
+<Window
+	x:Class="Whush.Demo.License.WindowCheckLic" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:gif="http://wpfanimatedgif.codeplex.com"
+	Title="WindowCheckLic"
+	Height="139"
+	Width="201"
+	MaxHeight="139"
+	MaxWidth="201"
+	MinHeight="139"
+	MinWidth="201"
+	Icon="/mainicon.ico"
+	WindowStyle="None"
+	Background="#00FFFFFF"
+	AllowsTransparency="True"
+	Topmost="True"
+	ShowInTaskbar="False"
+	WindowStartupLocation="CenterScreen" xmlns:license="clr-namespace:Whush.Demo.License"
+	Loaded="WindowLoad">
+	<Canvas
+		Background="#00FFFFFF"
+		Margin="0,0,-59,-30">
+		<Rectangle
+			Name="rectangle1"
+			Height="41"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Width="137"
+			Fill="#FF191919"
+			Opacity="0.8"
+			Stretch="Fill"
+			RadiusX="39"
+			RadiusY="39"
+			Canvas.Left="64" />
+		<Image
+			Name="GifInfo"
+			ImageBehavior.AnimatedSource="/Images\load.gif"
+			ToolTip="Дождитесь завершения проверки лицензии!"
+			RenderTransformOrigin="0.593,0.5"
+			Canvas.Top="41"
+			Height="98"
+			Width="153"
+			Canvas.Left="48" />
+		<Label
+			Content="Проверка лицензии!"
+			Foreground="#FFFFFFFF"
+			FontWeight="Bold"
+			HorizontalAlignment="Center"
+			HorizontalContentAlignment="Center"
+			VerticalAlignment="Top"
+			Width="137"
+			Canvas.Left="64" />
+		<Label
+			Content="Подождите..."
+			Foreground="#FFFFFFFF"
+			FontWeight="Bold"
+			HorizontalAlignment="Center"
+			HorizontalContentAlignment="Center"
+			VerticalAlignment="Top"
+			Width="115"
+			Canvas.Top="15"
+			Canvas.Left="76" />
+	</Canvas>
+</Window>

@@ -1,0 +1,29 @@
+<Window
+	x:Class="Whush.Demo.License.WindowStart" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:gif="http://wpfanimatedgif.codeplex.com"
+	Title="WindowStart"
+	Height="109"
+	Width="142"
+	MaxHeight="109"
+	MaxWidth="142"
+	MinHeight="109"
+	MinWidth="142"
+	Icon="/mainicon.ico"
+	WindowStyle="None"
+	Background="#00FFFFFF"
+	AllowsTransparency="True"
+	Topmost="True"
+	WindowStartupLocation="CenterScreen" xmlns:license="clr-namespace:Whush.Demo.License"
+	Loaded="WindowLoad">
+	<Canvas
+		Background="#FF000000"
+		Margin="0,0,0,-8">
+		<Image
+			Name="GifInfo"
+			ImageBehavior.AnimatedSource="/Images\loading-animation.gif"
+			ToolTip="Дождитесь завершения проверки лицензии!"
+			RenderTransformOrigin="0.593,0.5"
+			Canvas.Top="1"
+			Height="116"
+			Width="142" />
+	</Canvas>
+</Window>
